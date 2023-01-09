@@ -1,0 +1,569 @@
+:root{
+    --negro: #000000;
+    --negroClaro: #2B2A2D;
+    --grisClaro: #D3CDD2;
+    --azul: #2551A2;
+    --grisGranado: #69676B;
+    --font: 'Sofia Sans Condensed', sans-serif;
+}
+
+html{
+    font-size: 62.5%;
+}*, *:before, *:after{
+    box-sizing: border-box;
+}
+
+body{
+    line-height: 1.5;
+    font-size: 16px;
+    background-color: var(--grisClaro);
+    color: white;
+}
+
+h1,h2,h3,h4,p{
+    margin: 0 1rem 0 0;
+}
+
+h1{
+    font-size: 3.4rem;
+    font-weight: 700;
+}
+
+h2{
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+h3{
+    font-size: 2.8rem;
+    font-weight: 700;
+}
+
+li{
+    font-size: 1.6rem;
+}
+
+a{
+    font-size: 1.6rem;
+}
+
+video{
+    display: block;
+    margin: 0;
+}
+
+.hide{
+    display: none !important;
+}
+
+.show{
+    display: block;
+}
+
+/* Header y hero */
+.hero{
+    height: 410px;
+    background-image: url(/img/hotmar\ enero\ 2023.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@media (max-width:768px) {
+    .hero{
+        background-position: center center;
+    }
+}
+
+.contenido_hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.contenido_hero a{
+    position: relative;
+    background-color: var(--negroClaro);
+    border: 2px solid hsl(219, 89%, 39%);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    font-size: 2rem;
+    color: var(--grisClaro);
+    font-weight: 400;
+    text-decoration: none;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.contenido_hero a::before{
+    content: '';
+    border: 2px solid hsl(219, 98%, 39%);
+    width: 190px;
+    height: 190px;
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 0 0 12px hsl(219, 98%, 39%);
+    transition: .3s;
+    animation: button 3s infinite;
+}
+
+@keyframes button {
+    0%{
+        box-shadow: 0 0 12px hsl(219, 98%, 39%);
+    }
+    50%{
+        box-shadow: 0 0 44px hsl(219, 98%, 39%);
+    }
+}
+
+.header{
+    background-color: var(--negroClaro);
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header h1{
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--grisClaro);
+    border-radius: 1rem;
+    border-bottom: 3px solid var(--azul);
+    width: 30%;
+}
+
+.hero_text h2{
+    color: var(--grisClaro);
+}
+
+/* Metas */
+.metas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--negro);
+    color: var(--grisClaro);
+    padding: 5rem 0;
+    margin: 5rem 0;
+}
+
+.metas h3{
+    padding: 2rem;
+    background-color: var(--azul);
+    text-align: center;
+    border-radius: 1rem;
+}
+
+.metas ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.metas i{
+    color: greenyellow;
+    font-size: 1.5rem;
+}
+
+@media (max-width:768px) {
+    .metas h3{
+        font-size: 1.6rem;
+        border-radius: 0;
+    }
+
+    .metas ul{
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    li{
+        font-size: 1.2rem;
+    }
+}
+
+/* Resultados */
+.resultados_contenido{
+    color: var(--grisClaro);
+    border-bottom-right-radius: 5rem;
+}
+
+.resultados h3{
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.resultados p{
+    font-size: 1.4rem;
+}
+
+.resultados video{
+    height: 300px;
+    width: 100%;
+}
+
+.resultados_flex{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.resultados_grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+    row-gap: 1rem;
+}
+
+.resultados_contenido .boton{
+    background-color: var(--azul);
+    text-align: center;
+    border-bottom-right-radius: 5rem;
+    margin: 0;
+    padding: 2rem 0;
+}
+
+@media (max-width: 768px) {
+    .resultados_grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .resultados_flex{
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 1rem;
+    }
+
+    .resultados_flex .resultados_contenido:nth-child(3){
+        display: none;
+    }
+
+    .resultados_grid .resultados_contenido:nth-child(14){
+        display: none;
+    }
+}
+
+.resultados .botonVer{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.botonVer .btn{
+    font-size: 1.6rem;
+    padding: 1rem 5rem;
+    margin-top: 1rem;
+}
+
+/* Metodo */
+.metodo_contenido{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.metodo h3{
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.metodo_grid h3{
+    padding: 2rem;
+    background-color: var(--azul);
+    text-align: center;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+}
+
+.metodo_grid{
+    padding: 3rem;
+    background-color: var(--negroClaro);
+    border-radius: 1rem;
+    color: var(--grisClaro);
+}
+
+@media (min-width: 768px) {
+    .metodo_grid:nth-child(4){
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+}
+
+.metodo ul{
+    list-style: none;
+}
+
+.metodo i{
+    color: greenyellow;
+}
+
+@media (max-width: 768px) {
+    .metodo_contenido{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* Oferta */
+.oferta{
+    text-align: center;
+    margin: 3rem;
+}
+
+.oferta h2{
+    margin: 3rem 0;
+}
+
+.oferta ul{
+    list-style: none;
+}
+
+.oferta li {
+    color: var(--grisClaro);
+    background-color: var(--negroClaro);
+    padding: 2rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    font-size: 1.6rem;
+}
+
+.oferta i{
+    color: greenyellow;
+}
+
+/* Pagos */
+.pagos{
+    text-align: center;
+}
+
+.pagos h2{
+    margin: 3rem 0;
+}
+
+.pagos_grid{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.pagos_contenido{
+    background-color: var(--negro);
+    border: 1px solid var(--grisGranado);
+    color: var(--grisClaro);
+    padding: 3rem;
+    border-radius: 1rem;
+}
+
+.pagos_contenido h3{
+    padding: 1rem;
+    border-bottom: 1px solid var(--azul);
+    border-radius: 1rem;
+}
+
+.pagos_boton{
+    display: block;
+    background-color: var(--azul);
+    color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+    text-decoration: none;
+}
+
+.pagos_boton:hover{
+    background-color: #3062be;
+}
+
+.pagos_contenido .tiempo{
+    font-size: 1.8rem;
+}
+
+.pagos_contenido .precio{
+    color: greenyellow;
+    font-size: 1.6rem;
+}
+
+.pagos_contenido .anuncio{
+    color: red;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .pagos{
+        margin: 0 2rem;
+    }
+    .pagos_contenido .tiempo{
+        font-size: 1.6rem;
+    }
+
+    .pagos_contenido .precio{
+        font-size: 1rem;
+    }
+
+    .pagos_contenido .anuncio{
+        font-size: 1.2rem;
+    }
+
+    .pagos_grid{
+        gap: 1rem;
+    }
+}
+
+/* Pagos garantia */
+.pagos_garantia{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.pagos_garantia img{
+    height: 125px;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+.pagos_garantia p{
+    width: 40%;
+    color: var(--grisGranado);
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+
+@media (max-width: 768px) {
+    .pagos_garantia p{
+        width: 100%;
+    }
+}
+
+/* Pagos whatsapp */
+.pagos h4{
+    color: red;
+    font-weight: 700;
+}
+
+.pagos_whatsapp{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.pagos_whatsapp img{
+    height: 125px;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+.pagos_whatsapp h3{
+    width: 40%;
+    color: var(--grisGranado);
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+
+.pagos_whatsapp .boton{
+    text-decoration: none;
+    background-color: green;
+    color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    font-weight: 700;
+}
+
+.pagos_whatsapp .boton:hover{
+    background-color: rgb(11, 153, 11);
+}
+
+/* Métodos de pago */
+.metodos_pagos h3{
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.metodos_pagos_grid{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.metodos_pagos_contenido{
+    width: 28rem;
+}
+
+.metodos_pagos_contenido .boton{
+    display: block;
+    text-decoration: none;
+    font-size: 1.8rem;
+    background-color: var(--negroClaro);
+    color: white;
+    padding: 1rem;
+    border-bottom: 5px solid var(--azul);
+    border-bottom-right-radius: 3rem;
+}
+
+.metodos_pagos_contenido .boton:hover{
+    background-color: var(--azul);
+}
+
+.metodos_pagos_contenido p{
+    font-size: 1.6rem;
+    font-weight: 700;
+
+}
+
+.metodos_pagos_contenido img{
+    height: 80px;
+    margin-bottom: 3rem;
+}
+
+@media (max-width: 768px) {
+    .metodos_pagos_contenido{
+        display: block;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 20rem;
+    }
+
+    .metodos_pagos_grid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+/* Footer */
+.footer{
+    margin-top: 5rem;
+}
+
+.footer p{
+    position: relative;
+    top: -1;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
